@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Psychic Game</title>
+</head>
+<body>
+	<h1> The Psychic Game </h1>	
+	<p>Guess what letter I'm thinking of...</p>
+  <div id="game">
+    <ul class="list-group">
+      <li class="list-group-item"><p id="wins">Wins: </p></li>
+      <li class="list-group-item"><p id="losses">Losses: </p></li>
+      <li class="list-group-item"><p id="guessLeft">Guesses Left: </p></li>
+     <li class="list-group-item"><p id="let">Your Guesses so far: </p></li>    
+ 	</ul> 
+ </div>
+<script type="text/javascript">
+ var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
+var wins = 0;
+var losses = 0;
+var guesses = 9;
+var guessesLeft = 9;
+var guessedLetters = computerChoices;
+var letterToGuess = null;
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+
+var updateGuessesLeft = function() {
+
+  document.querySelector('#guessLeft').innerHTML = "Guesses left: " + guessesLeft;
+};
+
+var updateLetterToGuess = function() {
+  this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
+};
+
+var updateGuessesSoFar = function() {
+  document.querySelector('#let').innerHTML = "Your Guesses so far: " + guessedLetters.join(', ');
+};
+
+document.onkeyup = function (event) { 
+
+	var userAttempt = event.key;
+	console.log(userAttempt);
+	guessesLeft--;
+	if( userAttempt === computerGuess){ else wins = ++
+
+	};
+}
+
+updateLetterToGuess();
+ console.log(letterToGuess);
+
+
+      </script>  
+
+</body>
+</html>
